@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devServer: {
     port: 3002
   },
+  nitro: {
+    preset: 'static'
+  },
   modules: ['@nuxtjs/tailwindcss'],
   typescript: {
     strict: true
