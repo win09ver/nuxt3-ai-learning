@@ -1,0 +1,21 @@
+{
+  "name": "nuxt3-todolist",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "3.9.3",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "typescript": "^5.3.0"
+  }
+}
