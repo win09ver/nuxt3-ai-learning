@@ -12,7 +12,10 @@ const filters: { label: string; value: FilterType }[] = [
 
 <template>
   <div class="max-w-lg mx-auto pt-16 px-4">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-8">TODO List</h1>
+    <div class="flex items-center justify-center gap-4 mb-8">
+      <h1 class="text-4xl font-bold text-blue-600">TODO List</h1>
+      <NuxtLink to="/calculator" class="text-sm text-gray-500 hover:text-blue-600 transition-colors">Calculator →</NuxtLink>
+    </div>
 
     <div class="bg-gray-50 rounded-xl p-6 shadow-md">
       <TodoForm />
