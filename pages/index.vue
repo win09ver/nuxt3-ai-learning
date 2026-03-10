@@ -29,6 +29,9 @@ const filters: { label: string; value: FilterType }[] = [
 
       <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-200">
         <span>{{ remainingCount }} item{{ remainingCount !== 1 ? 's' : '' }} left</span>
+        <div>
+          <button type="button" class="text-gray-400 hover:text-gray-600 transition-colors" @click="filter = 'all'">All</button>
+        </div>
 
         <div class="flex gap-1">
           <button

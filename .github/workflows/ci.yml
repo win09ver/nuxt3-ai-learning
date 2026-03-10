@@ -91,5 +91,12 @@ jobs:
             -H "content-type: application/json" \
             -d "$PAYLOAD")
 
-          REVIEW=$(echo "$RESPONSE" | jq -r '.content[0].text')
+          echo "API Response: $RESPONSE"
+
+          REVIEW=$(echo "$RESPONSE" | jq -r '.content[0].text // empty')
+          if [ -z "$REVIEW" ]; then
+            ERROR=$(echo "$RESPONSE" | jq -r '.error.message // "Unknown error"')
+            gh pr comment "$PR_NUMBER" --body "⚠️ AIレビュー失敗: $ERROR" --repo "$REPO"
+            exit 1
+          fi
           gh pr comment "$PR_NUMBER" --body "$REVIEW" --repo "$REPO"
